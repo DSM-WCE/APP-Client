@@ -4,8 +4,8 @@
 * 사용자의 취향에 맞게 이퀄라이징 세팅을 설정하고, 공유할 수 있는 뮤직 플레이어 어플리케이션
 
 ## 인원
-* 이동현(syeutyu)
-* 이진영(Leejinyeong0315)
+* [이동현(syeutyu)](https://github.com/syeutyu "" )
+* [이진영(Leejinyeong0315)](https://github.com/Leejinyeong0315 "" )
 
 ## 개발 스택
 * Java
