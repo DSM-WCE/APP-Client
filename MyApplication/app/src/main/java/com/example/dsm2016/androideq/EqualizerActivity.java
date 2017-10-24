@@ -22,6 +22,12 @@ public class EqualizerActivity extends AppCompatActivity {
     TextView text4;
     TextView text5;
 
+    TextView eqInfo1;
+    TextView eqInfo2;
+    TextView eqInfo3;
+    TextView eqInfo4;
+    TextView eqInfo5;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +46,12 @@ public class EqualizerActivity extends AppCompatActivity {
         text3 = (TextView)findViewById(R.id.text3);
         text4 = (TextView)findViewById(R.id.text4);
         text5 = (TextView)findViewById(R.id.text5);
+
+        eqInfo1 = (TextView)findViewById(R.id.eqInfo1);
+        eqInfo2 = (TextView)findViewById(R.id.eqInfo2);
+        eqInfo3 = (TextView)findViewById(R.id.eqInfo3);
+        eqInfo4 = (TextView)findViewById(R.id.eqInfo4);
+        eqInfo5 = (TextView)findViewById(R.id.eqInfo5);
 
         text1.setText(equalizer.getBandLevel((short)0));
         text2.setText(equalizer.getBandLevel((short)1));
@@ -137,4 +149,6 @@ public class EqualizerActivity extends AppCompatActivity {
         });
 
     }
+
+
 }
