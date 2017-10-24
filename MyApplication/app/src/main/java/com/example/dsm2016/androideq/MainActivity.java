@@ -22,9 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tab);
         viewPager = (ViewPager)findViewById(R.id.pager);
-        tabLayout.addTab(tabLayout.newTab().setText("이퀄라이징"));
-        tabLayout.addTab(tabLayout.newTab().setText("인기차트"));
-        tabLayout.addTab(tabLayout.newTab().setText("마이페이지"));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.mipmap.music).setText("플레이어"));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.mipmap.eq).setText("이퀄라이징"));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.mipmap.chart).setText("인기차트"));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.mipmap.mypage).setText("마이페이지"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         Log.d(TAG,String.valueOf(tabLayout.getTabCount()));
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(0);
+                viewPager.setCurrentItem(tab.getPosition());
             }
 
             @Override
