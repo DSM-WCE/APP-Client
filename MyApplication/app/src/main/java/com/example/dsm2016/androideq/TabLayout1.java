@@ -15,6 +15,6 @@ public class TabLayout1 extends Fragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_equalizer, container, false);
+        return inflater.inflate(R.layout.activity_player, container, false);
     }
 }

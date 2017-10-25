@@ -13,6 +13,6 @@ import android.view.ViewGroup;
 
 public class TabLayout3 extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.layout_1,container,false);
+        return inflater.inflate(R.layout.activity_chart,container,false);
     }
 }

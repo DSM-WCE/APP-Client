@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                Log.d(TAG,String.valueOf(tab.getPosition()));
                 viewPager.setCurrentItem(tab.getPosition());
             }
 
