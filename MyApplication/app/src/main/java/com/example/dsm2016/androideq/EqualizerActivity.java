@@ -33,7 +33,13 @@ public class EqualizerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_equalizer);
 
-        equalizer = new Equalizer(0, 0);
+        try{
+            equalizer = null;
+            equalizer = new Equalizer(0, 0);
+            equalizer.setEnabled(true);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         seekBar1 = (SeekBar)findViewById(R.id.seekBar1);
         seekBar2 = (SeekBar)findViewById(R.id.seekBar2);
@@ -53,17 +59,17 @@ public class EqualizerActivity extends AppCompatActivity {
         eqInfo4 = (TextView)findViewById(R.id.eqInfo4);
         eqInfo5 = (TextView)findViewById(R.id.eqInfo5);
 
-        text1.setText(equalizer.getBandLevel((short)0));
-        text2.setText(equalizer.getBandLevel((short)1));
-        text3.setText(equalizer.getBandLevel((short)2));
-        text4.setText(equalizer.getBandLevel((short)3));
-        text5.setText(equalizer.getBandLevel((short)4));
-
         seekBar1.setProgress(equalizer.getBandLevel((short)0));
         seekBar2.setProgress(equalizer.getBandLevel((short)1));
         seekBar3.setProgress(equalizer.getBandLevel((short)2));
         seekBar4.setProgress(equalizer.getBandLevel((short)3));
         seekBar5.setProgress(equalizer.getBandLevel((short)4));
+
+        text1.setText(String.valueOf(seekBar1.getProgress()));
+        text2.setText(String.valueOf(seekBar2.getProgress()));
+        text3.setText(String.valueOf(seekBar3.getProgress()));
+        text4.setText(String.valueOf(seekBar4.getProgress()));
+        text5.setText(String.valueOf(seekBar5.getProgress()));
 
         seekBar1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -103,6 +109,7 @@ public class EqualizerActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 equalizer.setBandLevel((short)2, (short)(i-1500));
+                text3.setText(String.valueOf(equalizer.getBandLevel((short)2)));
             }
 
             @Override
@@ -119,6 +126,7 @@ public class EqualizerActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 equalizer.setBandLevel((short)3, (short)(i-1500));
+                text4.setText(String.valueOf(equalizer.getBandLevel((short)3)));
             }
 
             @Override
@@ -135,6 +143,7 @@ public class EqualizerActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 equalizer.setBandLevel((short)4, (short)(i-1500));
+                text5.setText(String.valueOf(equalizer.getBandLevel((short)4)));
             }
 
             @Override
