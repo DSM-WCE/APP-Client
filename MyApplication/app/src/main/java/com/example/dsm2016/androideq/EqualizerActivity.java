@@ -157,6 +157,8 @@ public class EqualizerActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
 
 
